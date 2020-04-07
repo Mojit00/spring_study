@@ -16,11 +16,6 @@
 
 package org.springframework.context.support;
 
-import java.io.IOException;
-import java.lang.reflect.Constructor;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.function.Supplier;
-
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanDefinitionStoreException;
@@ -38,6 +33,11 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
+
+import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.function.Supplier;
 
 /**
  * Generic ApplicationContext implementation that holds a single internal
@@ -105,6 +105,7 @@ public class GenericApplicationContext extends AbstractApplicationContext implem
 
 	/**
 	 * Create a new GenericApplicationContext.
+	 * 首先调用的构造方法，实例化一个bean工厂new DefaultListableBeanFactory()
 	 * @see #registerBeanDefinition
 	 * @see #refresh
 	 */
